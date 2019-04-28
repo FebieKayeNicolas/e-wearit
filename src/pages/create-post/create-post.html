@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+    <ion-icon name="menu"> </ion-icon>
+    </button>
+  <ion-title  align="center">Add Item  <ion-icon name="md-cart"></ion-icon></ion-title>  
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding id="page7" style="background-color:white;">
+  <div class="spacer" style="width:300px;height:21px;" id="createPost-spacer14"></div>
+  <img src="assets/img/logo.png" style="display:block;width:50%;height:auto;margin-left:auto;margin-right:auto;" />
+ 
+    <div class="spacer" style="width:300px;height:22px;" id="createPost-spacer15"></div>
+<ion-item style="text-align: center">
+  <p>{{base64ImagePath}}</p>
+  <button ion-button color="light" (click)="presentActionSheet()">Upload</button>
+</ion-item>
+
+    <ion-item id="createPost-textarea1">
+      <ion-label floating>
+        Item
+      </ion-label>
+      <ion-input type="text" name="item" #item></ion-input>
+    </ion-item>
+    <ion-item id="createPost-textarea4">
+      <ion-label floating>
+        Description
+      </ion-label>
+      <ion-input type="text" name="description" #description></ion-input>
+    </ion-item>
+    <ion-item id="createPost-textarea5">
+      
+      <ion-label floating>
+        Price
+      </ion-label>
+      <ion-input type="number" name="price" #price></ion-input>
+    </ion-item>
+    <div style="padding:10px"></div>
+    <button ion-button block (click)="post()" color="ButtonColor" round>Add Item</button>
+  
+</ion-content>

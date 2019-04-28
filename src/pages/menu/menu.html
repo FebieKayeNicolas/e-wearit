@@ -1,0 +1,55 @@
+<div *ngIf="showSplash" class="splash">
+  <div class="spinner"></div>
+</div>
+
+<ion-menu [content]="mainContent">
+     
+        <ion-content >
+            <div style="padding:10px"></div>
+            <img src="assets/img/logo.png" style="display:block;width:50%;height:auto;margin-left:auto;margin-right:auto;" />
+  
+            <ion-item (click)="Profile()">
+                <ion-avatar item-left>
+                    <img src="data:image/png;base64,{{ info.image }}" />
+                </ion-avatar>
+                <ion-label>
+                      {{ info.username }}
+                  </ion-label>  
+            </ion-item>
+
+          <ion-list>
+            <button ion-item (click)="Newsfeed()">
+                <ion-icon name="home"></ion-icon>
+              Home
+            </button>
+            <button ion-item (click)="Categories()">
+              <ion-icon name="list-box"></ion-icon>
+              Categories
+          </button>
+          <button ion-item (click)="CreatePost()">
+            <ion-icon name="create"></ion-icon>
+            Create Post
+        </button>
+            <button ion-item (click)="Profile()">
+                <ion-icon name="person"></ion-icon>
+              Profile
+            </button>
+            <button ion-item (click)="ChatList()">
+              <ion-icon name="chatbubbles"></ion-icon>
+              Chat
+          </button>
+            <button ion-item (click)="TermsCon()">
+                <ion-icon name="information-circle"></ion-icon>
+              Terms and Condition
+            </button>
+            <button ion-item (click)="logout()">
+                <ion-icon name="log-out"></ion-icon>
+              Logout
+            </button>
+          </ion-list>
+        </ion-content>
+      </ion-menu>
+     
+
+<ion-nav #mainContent swipeBackEnabled="false" [root]="rootPage"></ion-nav>
+

@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-input id="photo-input" type="file" [(ngModel)]="productData.image" accept="image/*"></ion-input>
+<ion-content padding id="page7" style="background-color:#FCBDFC;">
+  <ion-list no-line>
+        <ion-item>
+          <ion-input type="text" placeholder="Country" name="country" #country></ion-input>
+        </ion-item>
+          <ion-item>
+          <ion-input type="email" placeholder="Capital" name="capital" #capital></ion-input>
+        </ion-item> 
+         </ion-list>
+<div >
+            <button ion-button  round outline block (click)="Post()">Post</button>         
+</div>
+</ion-content>

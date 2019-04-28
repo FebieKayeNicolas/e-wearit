@@ -1,0 +1,64 @@
+<!--
+  Generated template for the EditProfilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+    <ion-icon name="menu"> </ion-icon>
+    </button>
+  <ion-title>
+        Edit Product
+  </ion-title>  
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="background">
+  <div style="width:300px;height:40px;"></div>
+  <form>
+    <img src="assets/img/logo2.png" style="display:block;width:60%;height:auto;margin-left:auto;margin-right:auto;">
+    <ion-item>
+      <p>{{base64ImagePath}}</p>
+      <button ion-button color="light" (click)="presentActionSheet()">Upload</button>
+    </ion-item>
+
+    <div style="width:300px;height:10px;"></div>
+
+    <ion-list style="padding-right: 30px; padding-left: 30px;">
+      <ion-item class="item item-trns">
+        <ion-label floating> <ion-icon name="people" solid item-left style="color:#FE40A2;">
+        </ion-icon>
+          Item
+        </ion-label>
+        <ion-input type="text" name="item" #item [(ngModel)]="info.item"></ion-input>
+      </ion-item>
+
+      <ion-item class="item item-trns">
+        <ion-label floating > <ion-icon name="lock" solid item-left style="color:#FE40A2;">
+        </ion-icon>
+          Description
+        </ion-label>
+        <ion-input type="text" name="description" #description [(ngModel)]="info.description"></ion-input>
+      </ion-item>
+
+      <ion-item class="item item-trns">
+        <ion-label floating > <ion-icon name="person" solid item-left style="color:#FE40A2;">
+        </ion-icon>
+          Price
+        </ion-label>
+        <ion-input type="number" name="price" #price [(ngModel)]="info.price"></ion-input>
+      </ion-item>
+
+      <div style="width:300px;height:30px; padding-right: 10px; padding-left: 20px"></div>
+      <ion-row responsive-sm>
+        <ion-col>
+         <button ion-button (click)="saveProduct()" block round style="background-color: #FE40A2; color: white;"> <ion-icon name="save" solid item-left style="color:#FE40A2;">
+        </ion-icon>Save Product</button>
+        </ion-col>
+      </ion-row>
+
+    </ion-list>
+  </form>
+</ion-content>

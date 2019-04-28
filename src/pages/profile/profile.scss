@@ -1,0 +1,46 @@
+page-profile {
+
+// .image{
+//     margin: auto;
+//      height: 50px; 
+//      width: 50px; 
+//    // border: 2px solid #fff;
+//     border-radius: 50%;
+//     // box-shadow: 0 0 5px gray;
+//     display: block;
+// }
+
+.background{
+  background-color: white;
+}
+
+.item.item-trns {
+  border-color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0);
+  color: rgb(187, 180, 184); 
+}
+
+.profile-image{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.avatar {
+  border-radius: 100%;
+  position: absolute;
+  border-color: #FE40A2;
+}
+
+.edit-button {
+  background: #fff; 
+  border: 1px solid #ccc; 
+  font-size: 13px; 
+  border-radius: 3px;
+  padding: 5px;
+  font-weight: bold;
+  width: 90%;
+  margin-right: 30px;
+}
+
+}

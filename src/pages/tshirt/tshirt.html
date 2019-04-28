@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+    <ion-icon name="menu"> </ion-icon>
+    </button>
+    <ion-toolbar>
+  <ion-title>
+        E-WEARIT  
+  </ion-title>  
+</ion-toolbar>
+  </ion-navbar>
+  <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="setFilteredItems()"> </ion-searchbar>
+</ion-header>
+<!--<button ion-button type="button" (click)="sort()">Sort</button>
+<ion-item *ngFor="let item of items  | search : terms}">-->
+
+
+<ion-content padding id="page4" style="background-color:#F2C4E6;">
+  
+<ion-grid no-padding>
+<ion-row>
+    <ion-col col-6 *ngFor="let item of titles; let i = index">
+      <ion-card (click)="home(item)" >
+          
+        <ion-chip color="primary" style="position: absolute; right: 20px; top: 20px;">
+          <!-- <ion-label>20% Off</ion-label> -->
+        </ion-chip>
+            <ion-buttons end>
+              <button ion-button  round outline (click)="delete(i)">
+                <ion-icon name="close-circle"></ion-icon>                
+              </button>
+            </ion-buttons> 
+            <img src="http://localhost/ewearit/img/{{item.image}}" no-margin/>
+        <div padding>
+          <h2>
+            {{item.item}}
+          </h2>
+          <h4>
+            <!-- <span style="text-decoration: line-through;" >₱200</span>  -->
+            ₱  {{item.price}}
+          </h4>   
+      
+        </div>
+    
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>

@@ -1,0 +1,33 @@
+<ion-content class="background">
+  <div style="width:300px;height:40px;"></div>
+  <form>
+    <img src="assets/img/logo2.png" style="display:block;width:60%;height:auto;margin-left:auto;margin-right:auto;">
+    <div style="width:300px;height:10px;"></div>
+    <ion-list style="padding-right: 30px; padding-left: 30px;">
+      <ion-item class="item item-trns">
+        <ion-label floating style="color: white"> <ion-icon name="person" solid item-left style="color:white;">
+        </ion-icon>
+          Username
+        </ion-label>
+        <ion-input type="username" name="username" #username></ion-input>
+      </ion-item>
+      <ion-item class="item item-trns">
+        <ion-label floating style="color: white"> <ion-icon name="lock" solid item-left style="color:white;">
+        </ion-icon>
+          Password
+        </ion-label>
+        <ion-input type="password" name="password" #password></ion-input>
+      </ion-item>
+      <div style="width:300px;height:30px; padding-right: 10px; padding-left: 20px"></div>
+      <ion-row responsive-sm>
+        <ion-col>
+          <button ion-button (click)="signIn()" block round style="background-color: white; color: #FE40A2">Login</button>
+        </ion-col>
+        <ion-col>
+          <button ion-button (click)="signUp()" block outline round style="color: white; border-color: white; border-width: 1.5px">Signup</button>
+        </ion-col>
+      </ion-row>
+    </ion-list>
+  </form>
+  <p class="forgotpass" ion-text style="color: #fed8ec;" tappable (click)="forgotPass()"><strong>Forgot Password?</strong></p>
+</ion-content>

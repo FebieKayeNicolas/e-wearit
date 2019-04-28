@@ -1,0 +1,65 @@
+
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"> </ion-icon>
+            </button>
+      <ion-title>
+      Chat  
+      </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding style="overflow: auto; height: 100%;">
+     
+    <div class="message-wrap">
+
+        <div *ngFor="let m of messages">
+            <div class="sender" *ngIf="m.sender==user_id">
+              <ion-grid>
+                <ion-row>
+                  <ion-col col-2 text-left>
+                      <!-- <img src="assets/img/{{info.image}}"> -->
+                  </ion-col>
+                  <ion-col col-10>
+                    <p>{{ m.message }}</p>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </div>
+      
+            <div class="me" *ngIf="m.receiver==user_id">
+              <ion-grid>
+                <ion-row>
+                  <ion-col col-10>
+                    <p>{{ m.message }}</p>
+                  </ion-col>
+                  <ion-col col-2>
+                      <!-- <img src="assets/img/{{ info.image }}" alt=""> -->
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </div>
+
+        </div>
+
+      
+
+      </div>
+      
+  
+  </ion-content>
+<form>
+  <ion-footer no-border>
+    <ion-toolbar color="light">
+      <ion-textarea placeholder="Enter your message" #message (keydown.enter)="sendChat(message)" name="message" ></ion-textarea>
+      <ion-buttons end>
+        <button (click)="sendChat(message)" ion-button icon-only >
+          <ion-icon name="send" color="white"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-toolbar>
+  
+  </ion-footer>
+</form>
+
