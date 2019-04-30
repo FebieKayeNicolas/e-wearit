@@ -57,7 +57,7 @@ doRefresh(refresher){
     let options = new RequestOptions({ headers: headers });
        
      let loader = this.loading.create({
-        content: 'Processing please wait...',
+        // content: 'Processing please wait...',
       });
     
      loader.present().then(() => {
@@ -135,6 +135,5 @@ doRefresh(refresher){
       });
       });
     }
-
 
 }

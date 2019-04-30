@@ -35,8 +35,8 @@ export class ChatProvider {
     return this.http.get(this.apiUrl+'fetchchat.php?user='+user_id+'&friend='+friend_id);
   }
 
-  listPersons():Observable<any[]>{
-    return this.http.get<any[]>(this.apiUrl+'chatlist.php');
+  listPersons(user_id):Observable<any[]>{
+    return this.http.get<any[]>(this.apiUrl+'chatlist.php?user='+user_id);
   }
 
   // message(message: string){

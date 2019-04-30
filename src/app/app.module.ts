@@ -22,9 +22,6 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { LandingPagePage } from '../pages/landing-page/landing-page';
 import { ChatPage } from '../pages/chat/chat';
 import { CategoriesPage } from '../pages/categories/categories';
-import { TopsPage } from '../pages/tops/tops';
-import { PantsPage } from '../pages/pants/pants';
-import { TshirtPage } from '../pages/tshirt/tshirt';
 import { WishlistPage } from '../pages/wishlist/wishlist';
 import { TermsAndConditionPage } from '../pages/terms-and-condition/terms-and-condition';
 import { StarRatingModule } from 'ionic3-star-rating';
@@ -33,6 +30,8 @@ import { ChatlistPage } from '../pages/chatlist/chatlist';
 import { MenuPage } from '../pages/menu/menu';
 import { Camera, CameraOptions } from "@ionic-native/camera";
 import { EditProductPage } from '../pages/edit-product/edit-product';
+import { ProductDetailsPage } from '../pages/product-details/product-details';
+import { CategoryNewsfeedPage } from '../pages/category-newsfeed/category-newsfeed';
 
 @NgModule({
   declarations: [
@@ -52,14 +51,13 @@ import { EditProductPage } from '../pages/edit-product/edit-product';
     LandingPagePage,
     ChatPage,
     CategoriesPage,
-    TopsPage,
-    PantsPage,
-    TshirtPage,
     WishlistPage,
     TermsAndConditionPage,
     ChatlistPage,
     MenuPage,
-    EditProductPage
+    EditProductPage,
+    ProductDetailsPage,
+    CategoryNewsfeedPage
   ],
   imports: [
     BrowserModule,
@@ -85,14 +83,13 @@ import { EditProductPage } from '../pages/edit-product/edit-product';
     LandingPagePage,
     ChatPage,
     CategoriesPage,
-    TopsPage,
-    PantsPage,
-    TshirtPage,
     WishlistPage,
     TermsAndConditionPage,
     ChatlistPage,
     EditProductPage,
-    MenuPage
+    MenuPage,
+    ProductDetailsPage,
+    CategoryNewsfeedPage
   ],
   providers: [
     StatusBar,

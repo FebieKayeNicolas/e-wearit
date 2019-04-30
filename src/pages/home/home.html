@@ -1,3 +1,5 @@
+<!-- PRODUCT DETAILS FOR SELLER -->
+
 <ion-header>
   <ion-navbar>
     <ion-buttons start>
@@ -8,7 +10,7 @@
 </ion-header>
 
 <ion-content fullscreen class="product-detail" style="background-color: #f4f4f4;">
-
+  <div style="padding:10px"></div>
   <ion-slides pager style="height: 250px">
     <ion-slide>
       <img src="data:image/png;base64,{{item.image}}">
@@ -44,7 +46,8 @@
      <ion-row class="detail">
         Details
      </ion-row>
-       <h2><b>Note</b></h2>
+       <h2><b>Quantity: {{item.quantity}}</b></h2>
+       <h2><b>Category: {{item.category}}</b></h2>
         <ul>
           {{item.description}}
         </ul> 
@@ -68,7 +71,7 @@
           <span style="font-size: 12px;color: #717171;">,  20137 reviews</span>
         </ion-col>
              <ion-col>
-                <button ion-button (click)="editProduct()" block round style="background-color: #FE40A2; color: white;">Edit Product</button>
+                <button ion-button (click)="presentActionSheet()" block round style="background-color: #FE40A2; color: white;">Edit Product</button>
             </ion-col>
       </ion-row>
     </ion-card-content>
@@ -77,92 +80,38 @@
 </ion-content>
 
 <ion-footer style="background-color: #fff;">
-    <ion-grid>
-      <ion-row>
-        <ion-col>
-          <ion-buttons>
-            <button ion-button full clear (click)="chat()">
-               <ion-icon name="mail"></ion-icon>Message
-            </button>
-          </ion-buttons>
-        </ion-col>
-        <ion-col>
-          <ion-buttons>
-            <button ion-button full (click)="buyNow()">
-              <ion-icon name="menu"></ion-icon>Buy Now
-            </button>
-          </ion-buttons>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-buttons>
+          <button ion-button full clear (click)="pdBuyer()">
+             <ion-icon name="mail"></ion-icon>Product Details
+          </button>
+        </ion-buttons>
+      </ion-col>
+      <ion-col>
+        <ion-buttons>
+          <button ion-button full (click)="buyNow()">
+            <ion-icon name="menu"></ion-icon>Buy Now
+          </button>
+        </ion-buttons>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-footer>
 
 
 
-
-
-
-<!-- <ion-content padding id="page4" style="background-color:white">  
-
-<div class="spacer" style="width:300px;height:2.96875px;" id="home-spacer9"></div> -->
-  <!-- <div id="home-container1">
-      <ion-slides pager style="height: 250px; width:370px">
-          <ion-slide>
-              <img src="http://localhost/ewearit/img/{{item.image}}" >
-          </ion-slide>
-          <ion-slide>
-              <img src="http://localhost/ewearit/img/{{item.image}}" >
-          </ion-slide>
-          <ion-slide>
-              <img src="http://localhost/ewearit/img/{{item.image}}" >
-          </ion-slide>
-        </ion-slides>
-
-<div style="padding:10px">
-    <ion-card>
-      <ion-card-content>
-        <h2>{{item.item}}</h2>
-        <small >Posted by: {{ item.username }} </small> <br>
-        <small >Special Price</small>
-        
-        <p class="price"> {{item.price | currency: '₱'}}</p>
-        
-        <ion-badge width="15">4.1<ion-icon name="star"></ion-icon></ion-badge> 
-          <span style="font-size: 12px;color: #717171;">340 ratings, 58 reviews</span>
-       </ion-card-content>
-        <ion-row>
-          <ion-col width-50 >
-            <ion-icon name="share-alt">Share</ion-icon>
-          </ion-col>
-          <ion-col width-50 >
-              <ion-icon name="heart">Wishlist</ion-icon>
-          </ion-col>
-        </ion-row>
-    </ion-card>
-  
-    <ion-card>
-      <ion-card-content>
-       <ion-row class="detail">
-          Details
-       </ion-row>
-         <h2><b>Note</b></h2>
-          <ul>
-            {{item.description}}
-          </ul>  
-   </ion-card-content>
-    </ion-card>
-  </div> 
-
-<ionic3-star-rating style="text-align:center "
+<!--<ionic3-star-rating style="text-align:center "
     activeIcon = "ios-star"
     defaultIcon = "ios-star-outline"
     activeColor = "rgb(245, 154, 17)"
     defaultColor = "#f4f4f4"
     readonly="false"
     [rating]="3">
-</ionic3-star-rating> -->
+</ionic3-star-rating> --> -->
 
-    <!--<button ion-button  round outline block (click)="createPost()">Create Post</button>-->
-    <!-- <button ion-button  round outline block (click)="presentActionSheet()">Delete</button> -->
-  <!-- </div>
-</ion-content> --> 
+    <!-- <button ion-button  round outline block (click)="createPost()">Create Post</button>
+    <button ion-button  round outline block (click)="presentActionSheet()">Delete</button> -->
+   <!-- </div> -->
+<!-- </ion-content> --> 

@@ -23,11 +23,11 @@ export class MyApp {
 
     platform.ready().then(() => {
    
-      //  if(!localStorage.getItem('server_response')){
-         this.rootPage = MenuPage;
-      //  } else{
-      //      this.rootPage = MenuPage;
-      //   }
+       if(!localStorage.getItem('server_response')){
+         this.rootPage = WelcomePage;
+       } else{
+           this.rootPage = MenuPage;
+        }
 
       statusBar.styleDefault();
       splashScreen.hide();

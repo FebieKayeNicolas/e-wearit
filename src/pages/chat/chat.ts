@@ -45,6 +45,7 @@ constructor(
 
 
   this.friend = this.navParams.get('user');
+  console.log(this.friend.id);
   this.user_id = JSON.parse(localStorage.getItem('server_response'))['server_response']['id'];
 }
 
@@ -61,105 +62,106 @@ ngOnInit(){
   });
 }
 
-doSend(){
+// doSend(){
 
-//// check to confirm the username, email, telephone and password fields are filled
+// //// check to confirm the username, email, telephone and password fields are filled
 
-if(this.message.value=="" ){
+// if(this.message.value=="" ){
 
-    let alert = this.alertCtrl.create({
+//     let alert = this.alertCtrl.create({
     
-    title:"ATTENTION",
+//     title:"ATTENTION",
     
-    subTitle:"Message field is empty",
+//     subTitle:"Message field is empty",
     
-    buttons: ['OK']
+//     buttons: ['OK']
     
-    });
+//     });
     
-    alert.present();
+//     alert.present();
     
-    } 
-    else
+//     } 
+//     else
     
-    {
+//     {
     
-    var headers = new Headers();
+//     var headers = new Headers();
     
-    headers.append("Accept", 'application/json');
+//     headers.append("Accept", 'application/json');
     
-    headers.append('Content-Type', 'application/json' );
+//     headers.append('Content-Type', 'application/json' );
     
-    let options = new RequestOptions({ headers: headers });
+//     let options = new RequestOptions({ headers: headers });
     
-    let data = {
+//     let data = {
     
-    sender: this.sender,
-    receiver: this.receiver,
-    time: this.time,
-    message: this.message.value,
-    status: this.status,
+//     sender: this.sender,
+//     receiver: this.receiver,
+//     time: this.time,
+//     message: this.message.value,
+//     status: this.status,
   
-    };
+//     };
     
-    let loader = this.loading.create({
+//     let loader = this.loading.create({
     
-    content: 'Processing please wait…',
+//     content: 'Processing please wait…',
     
-    });
+//     });
     
-    loader.present().then(() => {
+//     loader.present().then(() => {
     
-    this.http.post('http://localhost/ewearit/api/chat.php',data, options)
+//     this.http.post('http://localhost/ewearit/api/chat.php',data, options)
     
-    .map(res => res.json())
+//     .map(res => res.json())
     
-    .subscribe(res => {
+//     .subscribe(res => {
     
-    loader.dismiss()
+//     loader.dismiss()
     
-    if(res=="Sent"){
+//     if(res=="Sent"){
     
-      let alert = this.alertCtrl.create({
+//       let alert = this.alertCtrl.create({
       
-      title:"SENT",
+//       title:"SENT",
       
-      subTitle:(res),
+//       subTitle:(res),
       
-      buttons: ['OK']
+//       buttons: ['OK']
       
-      });
+//       });
       
-      alert.present();
+//       alert.present();
       
-      // this.navCtrl.setRoot(LoginPage);
+//       // this.navCtrl.setRoot(LoginPage);
     
-    }
-    else {
+//     }
+//     else {
     
-      let alert = this.alertCtrl.create({
+//       let alert = this.alertCtrl.create({
       
-      title:"ERROR",
+//       title:"ERROR",
       
-      subTitle:(res),
+//       subTitle:(res),
       
-      buttons: ['OK']
+//       buttons: ['OK']
       
-      });
+//       });
       
-      alert.present();
+//       alert.present();
     
-    }
+//     }
     
-    });
+//     });
     
-    });
+//     });
     
-    }
+//     }
     
-    }
+//     }
 
   sendChat(chatMessage){
+    console.log(this.friend);
     this.chat.sendChat(chatMessage.value,this.friend.id,this.user_id).subscribe();
     chatMessage.value = "";
   }

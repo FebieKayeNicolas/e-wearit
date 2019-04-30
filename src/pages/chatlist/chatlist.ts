@@ -33,16 +33,17 @@ export class ChatlistPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ChatlistPage');
-
+    console.log(JSON.parse(localStorage.getItem('server_response')))
     //load chat list from database
-    this.chat.listPersons().subscribe(data=>{
-      let user_id = JSON.parse(localStorage.getItem('server_response'))['server_response']['id'];
-      this.chatList = data.filter(user=>{return user.id != user_id});
+    this.chat.listPersons(JSON.parse(localStorage.getItem('server_response'))['server_response']['id']).subscribe(data=>{
+      console.log(data);
+      let sender_id = JSON.parse(localStorage.getItem('server_response'))['server_response']['id'];
+      this.chatList = data.filter(user=>{return user.id != sender_id});
     });
   }
 
-Chat(user){
-  this.navCtrl.push(ChatPage,{user});
+Chat(id){
+  this.navCtrl.push(ChatPage,{'user':id});
 }
 
 }

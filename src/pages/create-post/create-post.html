@@ -19,7 +19,7 @@
 
     <ion-item id="createPost-textarea1">
       <ion-label floating>
-        Item
+       Name of Item
       </ion-label>
       <ion-input type="text" name="item" #item></ion-input>
     </ion-item>
@@ -30,12 +30,33 @@
       <ion-input type="text" name="description" #description></ion-input>
     </ion-item>
     <ion-item id="createPost-textarea5">
-      
       <ion-label floating>
         Price
       </ion-label>
       <ion-input type="number" name="price" #price></ion-input>
     </ion-item>
+    <!-- <ion-item id="createPost-textarea5">
+      <ion-label floating>
+        Category
+      </ion-label>
+      <ion-input type="text" name="category" #category></ion-input>
+    </ion-item> -->
+
+    <ion-item>
+      <ion-label>Category</ion-label>
+      <ion-select okText="Okay" cancelText="Dismiss" #category>
+        <ion-option value="dresses">Dresses</ion-option>
+        <ion-option value="pants">Pants</ion-option>
+        <ion-option value="tops">Tops</ion-option>
+        <ion-option value="short">Short</ion-option>
+        <ion-option value="jacket">Jackets and Coats</ion-option>
+        <ion-option value="shoes">Shoes</ion-option>
+        <ion-option value="sandals">Sandals</ion-option>
+        <ion-option value="sneakers">Sneakers</ion-option>
+        <ion-option value="bags">Bags</ion-option>
+      </ion-select>
+    </ion-item>
+
     <div style="padding:10px"></div>
     <button ion-button block (click)="post()" color="ButtonColor" round>Add Item</button>
   

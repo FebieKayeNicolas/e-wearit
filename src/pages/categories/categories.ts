@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { TopsPage } from '../tops/tops';
-import { PantsPage } from '../pants/pants';
+import { CategoryNewsfeedPage } from '../category-newsfeed/category-newsfeed';
+
 
 @Component({
   selector: 'page-categories',
@@ -12,12 +12,12 @@ export class CategoriesPage {
   constructor(public navCtrl: NavController) {
 
   }
-tops(){
-  this.navCtrl.push(TopsPage);
-}
 
-pants(){
-  this.navCtrl.push(PantsPage);
-}
+
+  catFeed(value:any){
+    this.navCtrl.push(CategoryNewsfeedPage,{value:value});
+  }
+
+
 
 }

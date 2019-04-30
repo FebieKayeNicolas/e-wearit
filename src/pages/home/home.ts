@@ -4,6 +4,7 @@ import { CreatePostPage } from '../create-post/create-post';
 import { ProfilePage } from '../profile/profile';
 import { EditProductPage } from '../edit-product/edit-product';
 import { ChatPage } from '../chat/chat';
+import { ProductDetailsPage } from '../product-details/product-details';
 import { LoadingController } from 'ionic-angular';
 import {Http, Headers, RequestOptions}  from "@angular/http";
 import 'rxjs/add/operator/map';
@@ -39,8 +40,6 @@ export class HomePage {
 
       }
 
-
-      
       getfeed(){
         var headers = new Headers();
         headers.append("Accept", 'application/json');
@@ -48,7 +47,7 @@ export class HomePage {
         let options = new RequestOptions({ headers: headers });
            
          let loader = this.loading.create({
-            content: 'Processing please wait...',
+            // content: 'Processing please wait...',
           });
         
          loader.present().then(() => {
@@ -69,33 +68,9 @@ export class HomePage {
         
          }
 
-         presentActionSheet() {
-          const actionSheet = this.actionSheetCtrl.create({
-            title: 'Home',
-            buttons: [
-              {
-                text: 'Delete',
-                role: 'profile',
-                handler: () => {
-                  // this.navCtrl.push(EditProfilePage);
-                  console.log('Archive clicked');
-                }
-              },{
-                text: 'Edit',
-                handler: () => {
-                  console.log('Archive clicked');
-                }
-              },{
-                text: 'Cancel',
-                role: 'cancel',
-                handler: () => {
-                  console.log('Cancel clicked');
-                }
-              }
-            ]
-          });
-          actionSheet.present();
-        }
+pdBuyer(){
+  this.navCtrl.push(ProductDetailsPage);
+}
 
  chat(){
     this.navCtrl.push(ChatPage, {"user": {id: this.item.user_id_fk}});
@@ -105,4 +80,56 @@ export class HomePage {
     this.navCtrl.push(EditProductPage);
   }
 
+  presentActionSheet() {
+    const actionSheet = this.actionSheetCtrl.create({
+
+      title: 'Product Details',
+      buttons: [
+        {
+          text: 'Edit Product',
+          role: 'profile',
+        handler: () => {
+            this.navCtrl.push(EditProductPage);
+          }
+        },{
+          text: 'Delete Product',
+          handler: () => {
+            console.log('Archive clicked');
+          }
+        },{
+          text: 'Cancel',
+          role: 'cancel',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        }
+      ]
+    });
+    actionSheet.present();
+  }
+
 }
+
+// delete(index: number){
+//   var headers = new Headers();
+//   headers.append("Accept", 'application/json');
+//   headers.append('Content-Type', 'application/json' );
+//   let options = new RequestOptions({ headers: headers });
+     
+//    let loader = this.loading.create({
+//       content: 'Processing please wait...',
+//     });
+  
+//    loader.present().then(() => {
+  
+//   this.http.get(environment.ip+'/ewearit/api/delete.php?index='+this.titles[index]['id'],options)
+//   .map(res => res.json())
+//   .subscribe(res => {
+  
+//    loader.dismiss()
+//   this.titles=res.server_response;
+  
+//   console.log(this.titles);
+//   });
+//   });
+// }

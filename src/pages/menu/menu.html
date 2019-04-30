@@ -5,28 +5,28 @@
 <ion-menu [content]="mainContent">
      
         <ion-content >
-            <div style="padding:10px"></div>
-            <img src="assets/img/logo.png" style="display:block;width:50%;height:auto;margin-left:auto;margin-right:auto;" />
-  
-            <ion-item (click)="Profile()">
-                <ion-avatar item-left>
-                    <img src="data:image/png;base64,{{ info.image }}" />
-                </ion-avatar>
-                <ion-label>
-                      {{ info.username }}
-                  </ion-label>  
-            </ion-item>
+          
+          <div style="background-color: #FE40A2">
+                <div style="padding:10px"></div>
+                    <img  align="center" src="assets/img/logo2.png" class="image-logo"/>
+                  <ion-avatar class="avatar" item-left style="padding:15px">
+                    <img (click)="Profile()" align="left" src="data:image/png;base64,{{ info.image }}"/>
+                  </ion-avatar>
+                <div padding>
+                  <p no-margin no-padding><b>{{info.firstname}} {{info.lastname}}</b></p>
+                </div>  
+          </div>  
 
           <ion-list>
             <button ion-item (click)="Newsfeed()">
                 <ion-icon name="home"></ion-icon>
               Home
-            </button>
+            </button> 
             <button ion-item (click)="Categories()">
               <ion-icon name="list-box"></ion-icon>
               Categories
           </button>
-          <button ion-item (click)="CreatePost()">
+          <button ion-item (click)="CreatePost()" *ngIf="info.type==1">
             <ion-icon name="create"></ion-icon>
             Create Post
         </button>

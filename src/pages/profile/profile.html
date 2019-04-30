@@ -14,6 +14,23 @@
 
   <ion-content class="background">
 
+      <div>
+          <ion-segment>
+            <ion-segment-button value="grid">
+              <ion-icon name="apps"></ion-icon>
+            </ion-segment-button>
+            <ion-segment-button value="list">
+              <ion-icon name="list"></ion-icon>
+            </ion-segment-button>
+            <ion-segment-button value="tagged" (click)="goTaggedProfile()">
+              <ion-icon name="photos"></ion-icon>
+            </ion-segment-button>
+            <ion-segment-button value="saved" (click)="goSavedProfile()">
+              <ion-icon name="bookmark"></ion-icon>
+            </ion-segment-button>
+          </ion-segment>
+        </div>
+
       <ion-row padding>
           <!-- Avatar -->
           <ion-col col-3>
@@ -32,25 +49,16 @@
             <h6>119</h6>
             <p no-paddin no-margin>following</p>
           </ion-col>
-     
-            <ion-col no-padding no-margin col-4></ion-col>
-              <ion-col no-padding no-margin text-center col-8>
-                <button class="edit-button" (click)="presentActionSheet()">Edit your profile</button>
-              </ion-col>
-            <ion-col col-3></ion-col>
-          </ion-row>
+      </ion-row>
 
-    <!-- <div style="padding:10px"></div>
-      <div align="center">
-        <img class="profile-image" src="data:image/png;base64,{{info1.image}}">
-          <h4>{{ info1.firstname }} {{ info1.lastname }}</h4>
-          <h5>{{ info1.email }}</h5> 
-      </div> -->
-
+          <div padding>
+              <p no-margin no-padding><b>{{info1.firstname}} {{info1.lastname}}</b></p>
+              <p no-padding no-margin class="info"><a href="#">{{info1.email}}</a></p>
+          </div>
 
   <div class="spacer" style="width:100px;height:15px;" id="profile-spacer12"></div>
 
-<ion-list>
+<ion-list class="padding">
     <ion-item class="item item-trns">
       <ion-label> Username: </ion-label>
       <ion-label style="color:#FE40A2;"> {{ info1.username }}</ion-label>

@@ -3,15 +3,15 @@
         <button ion-button menuToggle>
             <ion-icon name="menu"> </ion-icon>
             </button>
-            <ion-title  align="center">Categories  <ion-icon name="md-categories"></ion-icon></ion-title>  
+            <ion-title  align="center">Categories  <ion-icon name="list"></ion-icon></ion-title>  
     </ion-navbar>
   </ion-header>
   
   <ion-content >
   
     <!-- Beginning of the category card -->
-    <div class="padding_helper" color="white" (click)="tops()">
-      <div class="category__image">
+    <div class="padding_helper" color="white" (click)="catFeed('tops')">
+      <div class="category__tops">
           <div class="text-center image__padding">
             <p class="section__headline">
                 The Stuff
@@ -25,8 +25,8 @@
     <!-- End of the category card -->
   
     <!-- Beginning of the category card -->
-    <div class="padding_helper" color="white" (click)="tshirt()">
-      <div class="category__image2">
+    <div class="padding_helper" color="white" (click)="catFeed('shirts')">
+      <div class="category__shirts">
           <div class="text-center image__padding">
             <p class="section__headline">
                 The stuff
@@ -40,27 +40,118 @@
     <!-- End of the category card -->
   
     <!-- Beginning of the category card -->
-    <div class="padding_helper" color="white" (click)="pants()">
-      <div class="category__image3">
+    <div class="padding_helper" color="white" (click)="catFeed('dresses')">
+      <div class="category__dresses">
           <div class="text-center image__padding">
             <p class="section__headline">
                 The stuff
             </p>
             <p class="nomargin category__headline">
-                PANTS
+                DRESSES
             </p>
           </div>
       </div>
     </div>
     <!-- End of the category card -->
-    <div class="padding_helper" color="white" (click)="CategoryTapped_3()">
-        <div class="category__image4">
+    <div class="padding_helper" color="white" (click)="catFeed('pants')">
+        <div class="category__pants">
             <div class="text-center image__padding">
               <p class="section__headline">
                   The stuff
               </p>
               <p class="nomargin category__headline">
-                  JEANS
+                  PANTS
+              </p>
+            </div>
+        </div>
+      </div>
+
+      <div class="padding_helper" color="white" (click)="catFeed('tops')">
+        <div class="category__tops">
+            <div class="text-center image__padding">
+              <p class="section__headline">
+                  The stuff
+              </p>
+              <p class="nomargin category__headline">
+                  TOPS
+              </p>
+            </div>
+        </div>
+      </div>
+
+      <div class="padding_helper" color="white" (click)="catFeed('short')">
+        <div class="category__short">
+            <div class="text-center image__padding">
+              <p class="section__headline">
+                  The stuff
+              </p>
+              <p class="nomargin category__headline">
+                  SHORTS
+              </p>
+            </div>
+        </div>
+      </div>
+
+      <div class="padding_helper" color="white" (click)="catFeed('jacket')">
+        <div class="category__jacket">
+            <div class="text-center image__padding">
+              <p class="section__headline">
+                  The stuff
+              </p>
+              <p class="nomargin category__headline">
+                  JACKETS AND COATS
+              </p>
+            </div>
+        </div>
+      </div>
+
+      <div class="padding_helper" color="white" (click)="catFeed('shoes')">
+        <div class="category__shoes">
+            <div class="text-center image__padding">
+              <p class="section__headline">
+                  The stuff
+              </p>
+              <p class="nomargin category__headline">
+                  SHOES
+              </p>
+            </div>
+        </div>
+      </div>
+
+      <div class="padding_helper" color="white" (click)="catFeed('sandals')">
+        <div class="category__sandals">
+            <div class="text-center image__padding">
+              <p class="section__headline">
+                  The stuff
+              </p>
+              <p class="nomargin category__headline">
+                  SANDALS
+              </p>
+            </div>
+        </div>
+      </div>
+
+      <div class="padding_helper" color="white" (click)="catFeed('sneakers')">
+        <div class="category__sneakers">
+            <div class="text-center image__padding">
+              <p class="section__headline">
+                  The stuff
+              </p>
+              <p class="nomargin category__headline">
+                  SNEAKERS
+              </p>
+            </div>
+        </div>
+      </div>
+
+      <div class="padding_helper" color="white" (click)="catFeed('bags')">
+        <div class="category__bags">
+            <div class="text-center image__padding">
+              <p class="section__headline">
+                  The stuff
+              </p>
+              <p class="nomargin category__headline">
+                 BAGS
               </p>
             </div>
         </div>

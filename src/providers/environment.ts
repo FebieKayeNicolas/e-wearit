@@ -4,5 +4,5 @@ export const environment = {
       key: 'f1088e34ed17896f3b69',
       cluster: 'ap1'
     },
-    ip:"http://192.168.100.60"
+    ip:"http://localhost"
   };

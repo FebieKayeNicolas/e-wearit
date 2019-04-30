@@ -21,6 +21,7 @@ import 'rxjs/add/operator/map';
   @ViewChild("item") item;
   @ViewChild("description") description;
   @ViewChild("price") price;
+  @ViewChild("category") category;
 
     base64Image: string;
     base64ImagePath: string;
@@ -39,7 +40,11 @@ import 'rxjs/add/operator/map';
   
   Post(){
   
-    if(this.item.value=="" || this.description.value=="" || this.price.value==""){
+    if(this.item.value=="" || 
+    this.description.value=="" || 
+    this.price.value=="" ||
+    this.category.value==""
+    ){
   
       let alert = this.alertCtrl.create({
         
@@ -65,6 +70,7 @@ import 'rxjs/add/operator/map';
         description: this.description.value,
         image: this.base64ImagePath,
         price: this.price.value,
+        category: this.category.value,
         user_id_fk: this.info.id
       
       };
